@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #050505;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- 1. شريط التنقل (شفاف تماماً) --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 8%;
+    position: absolute; /* يجعله يطفو فوق الصورة */
+    width: 100%;
+    z-index: 1000;
+    background: transparent; /* إزالة اللون الأسود تماماً */
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 40px; }
+nav ul li a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.4s;
+    letter-spacing: 1px;
+}
+nav ul li a:hover { color: #ff0000; }
+
+/* --- 2. قسم الهيرو (محاذاة لليسار مع صورة كاملة) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    /* تدرج لوني يختفي تدريجياً لليسار لإبراز الصورة الشخصية */
+    background-image: linear-gradient(to right, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.1) 90%), url('1000010183.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.content {
+    text-align: left; /* محاذاة النص لليسار */
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    margin-bottom: 10px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -2px; /* تباعد ضيق للاسم ليعطي هيبة */
+}
+
+.role {
+    color: #ff0000;
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 3px; /* تباعد حروف واسع للوصف الوظيفي */
+    text-transform: uppercase;
+}
+
+.content p {
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 45px; /* تباعد عمودي بين النص والزر */
+    font-size: 16px;
+}
+
+/* --- 3. الأقسام العامة (متوسطة الصفحة تماماً) --- */
+section {
+    padding: 120px 8%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* التوسط الأفقي */
+    justify-content: center; /* التوسط العمودي */
+    background-color: #050505;
+    position: relative;
+    z-index: 10;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center; /* توسط النصوص داخل الحاوية */
+}
+
+.section-title {
+    font-size: 38px;
+    color: #ff0000;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* --- 4. تنسيق الخدمات والـ About --- */
+.about { background-color: #080808; }
+.about-text p {
+    font-size: 19px;
+    color: #aaa;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.service-card {
+    background: #0d0d0d;
+    padding: 50px 35px;
+    border: 1px solid #1a1a1a;
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff0000;
+}
+
+/* --- 5. الأزرار (مع إصلاح تأثير الضغط) --- */
+.btn {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    padding: 16px 45px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s; /* جعل الانتقال أسرع قليلاً للسلاسة */
+    border: 1px solid #ff0000;
+    cursor: pointer;
+    outline: none; /* إزالة الحدود عند التركيز */
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #ff0000;
+}
+
+/* إزالة تأثير توهج اللون الأحمر والحدود المزعجة بعد الضغط */
+.btn:focus, 
+.btn:active {
+    outline: none;
+    box-shadow: none;
+    background-color: #ff0000; /* الحفاظ على اللون الأحمر الأصلي */
+    color: white;
+}
+
+/* --- 6. السوشيال ميديا الجانبية --- */
+.side-socials {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1001;
+}
+
+.side-socials a {
+    color: #fff;
+    margin-top: 30px;
+    font-size: 20px;
+    transition: 0.4s;
+    opacity: 0.6;
+}
+
+.side-socials a:hover {
+    color: #ff0000;
+    opacity: 1;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    color: #444;
+    font-size: 13px;
+    border-top: 1px solid #111;
+}
+
+/* --- الموبايل --- */
+@media (max-width: 768px) {
+    .content h1 { font-size: 45px; }
+    .hero { background-position: 75% center; }
+    nav { padding: 25px 5%; }
+    nav ul { display: none; }
+    .side-socials { display: none; }
+  }
