@@ -15,6 +15,18 @@ body {
     overflow-y: auto;
 }
 
+.cursor-glow {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -78,6 +90,7 @@ nav ul li a:hover { color: #D4AF37; }
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
+    min-height: 1.2em;
 }
 
 .content p {
@@ -222,6 +235,7 @@ section {
     
     .side-socials a { margin: 0 15px; }
     .follow-text, .line { display: none; }
+    .cursor-glow { display: none; }
 }
 
 footer {
