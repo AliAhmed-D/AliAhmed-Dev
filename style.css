@@ -15,7 +15,6 @@ body {
     overflow-y: auto;
 }
 
-/* --- 1. شريط التنقل --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -44,15 +43,13 @@ nav ul li a {
     font-weight: 500;
     transition: 0.4s;
 }
-nav ul li a:hover { color: #D4AF37; } /* ذهبي */
+nav ul li a:hover { color: #D4AF37; }
 
-/* --- 2. قسم الهيرو --- */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 8%;
-    /* تدرج لوني يحسن الرؤية على جميع الأحجام */
     background-image: linear-gradient(to right, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.2) 100%), url('1000010183.webp');
     background-size: cover;
     background-position: center;
@@ -67,7 +64,7 @@ nav ul li a:hover { color: #D4AF37; } /* ذهبي */
 }
 
 .content h1 {
-    font-size: clamp(35px, 8vw, 80px); /* خط مرن يصغر تلقائياً */
+    font-size: clamp(35px, 8vw, 80px);
     margin-bottom: 10px;
     line-height: 1.1;
     text-transform: uppercase;
@@ -75,7 +72,7 @@ nav ul li a:hover { color: #D4AF37; } /* ذهبي */
 }
 
 .role {
-    color: #D4AF37; /* ذهبي */
+    color: #D4AF37;
     font-size: clamp(14px, 2vw, 20px);
     margin-bottom: 25px;
     font-weight: 500;
@@ -90,7 +87,6 @@ nav ul li a:hover { color: #D4AF37; } /* ذهبي */
     font-size: clamp(14px, 1.5vw, 17px);
 }
 
-/* --- 3. الأقسام العامة --- */
 section {
     padding: 100px 8%;
     min-height: auto;
@@ -115,7 +111,6 @@ section {
     letter-spacing: 4px;
 }
 
-/* --- 4. الخدمات والـ About --- */
 .about { background-color: #080808; }
 .about-text p {
     font-size: clamp(16px, 1.8vw, 19px);
@@ -148,11 +143,10 @@ section {
     margin-bottom: 20px;
 }
 
-/* --- 5. الأزرار (إصلاح تأثير الضغط) --- */
 .btn {
     display: inline-block;
     background-color: #D4AF37;
-    color: #000; /* نص أسود للوضوح على الذهبي */
+    color: #000;
     padding: 16px 45px;
     text-decoration: none;
     font-weight: 700;
@@ -171,11 +165,10 @@ section {
 
 .btn:focus, .btn:active {
     outline: none;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* توهج ذهبي خفيف */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
     background-color: #D4AF37;
 }
 
-/* --- 6. السوشيال ميديا الجانبية --- */
 .side-socials {
     position: fixed;
     right: 40px;
@@ -198,7 +191,6 @@ section {
     transform: scale(1.2);
 }
 
-/* --- 7. التجاوب مع جميع الشاشات (Responsive) --- */
 @media (max-width: 1024px) {
     .hero { padding: 0 5%; }
     .side-socials { right: 20px; }
@@ -206,10 +198,10 @@ section {
 
 @media (max-width: 768px) {
     nav { padding: 25px 5%; }
-    nav ul { display: none; } /* إخفاء القائمة في الموبايل لعدم التداخل */
+    nav ul { display: none; }
     
     .hero {
-        background-position: 80% center; /* زحزحة الصورة لتظهر خلف النص */
+        background-position: 80% center;
         text-align: center;
         justify-content: center;
     }
@@ -220,7 +212,7 @@ section {
     }
 
     .side-socials {
-        position: relative; /* تحويلها لوضع عادي في الموبايل */
+        position: relative;
         flex-direction: row;
         right: auto;
         bottom: auto;
@@ -229,7 +221,7 @@ section {
     }
     
     .side-socials a { margin: 0 15px; }
-    .follow-text, .line { display: none; } /* إخفاء الخط والنص الجانبي */
+    .follow-text, .line { display: none; }
 }
 
 footer {
